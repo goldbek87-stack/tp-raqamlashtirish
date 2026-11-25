@@ -1,0 +1,13 @@
+{
+  "appId": "uz.davlatobod.tp",
+  "appName": "TP raqamlashtirish",
+  "webDir": "www",
+  "server": {
+    "url": "https://goldbek87-stack.github.io/tp-hatlov/",
+    "androidScheme": "https",
+    "allowNavigation": ["goldbek87-stack.github.io"]
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}
