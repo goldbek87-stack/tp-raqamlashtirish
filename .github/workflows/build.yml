@@ -28,6 +28,11 @@ jobs:
           npx cap add android
           npx cap sync android
 
+      - name: Ilova belgisi (logotip) va ochilish ekrani
+        run: |
+          pip install pillow
+          python3 make_icons.py
+
       - name: Ruxsatlar (kamera, GPS, internet)
         run: |
           M=android/app/src/main/AndroidManifest.xml
