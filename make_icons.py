@@ -3,7 +3,12 @@ import os, glob
 from PIL import Image, ImageDraw
 
 RES = "android/app/src/main/res"
-src = Image.open("logo.jpg").convert("RGB")
+# logo faylini topamiz: logo.jpg, logo (1).jpg, Logo.PNG ... yoki papkadagi istalgan rasm
+cands = [f for f in os.listdir(".") if f.lower().endswith((".jpg", ".jpeg", ".png"))]
+cands.sort(key=lambda f: (not f.lower().startswith("logo"), f))
+print("Topilgan rasmlar:", cands)
+if not cands: raise SystemExit("XATO: repoda logo rasmi yo'q. logo.jpg ni repo ildiziga yuklang.")
+src = Image.open(cands[0]).convert("RGB"); print("Logo sifatida olindi:", cands[0])
 W = min(src.size); src = src.crop((0, 0, W, W))
 
 def circle(img):
